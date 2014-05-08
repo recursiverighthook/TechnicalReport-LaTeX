@@ -1,0 +1,75 @@
+\documentclass[12pt, letterpaper]{report}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{listings}               % code block
+\usepackage{color}                  % code block
+\usepackage{titling}                % keep \maketitle from clearing title
+
+% biblatex
+\usepackage[backend=bibtex,natbib=true,style=numeric]{biblatex}
+\addbibresource{bibliography.bib}
+
+% code block --------------------------------------------------------
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tblr,
+    language=Python,
+    aboveskip=5mm,
+    belowskip=-2mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numbers=none,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    breakatwhitespace=true
+    tabsize=3
+}
+% code block --------------------------------------------------------
+
+\renewcommand{\baselinestretch}{1}
+\usepackage[margins=1in]{geometry}
+\author{Kenny Woo}
+\title{Writing an Integration Test Framework/Harness during Development}
+
+\includeonly{
+    letter-of-transmittal,
+    abstract,
+    body,
+}
+
+\begin{document}
+
+% title page ************************************
+\maketitle
+\newpage
+% roman numbering *******************************
+\setcounter{page}{1}
+\pagenumbering{roman}
+%forward ****************************************
+\include{letter-of-transmittal}
+\newpage
+\include{abstract}
+\newpage
+%toc ********************************************
+\tableofcontents
+\newpage
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+\newpage
+%arabic numbering *******************************
+\setcounter{page}{1}
+\pagenumbering{arabic}
+%report *****************************************
+\include{body}
+
+\nocite{*}
+\printbibliography
+\addcontentsline{toc}{chapter}{\numberline\bibname}
+
+\end{document}
